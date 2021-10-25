@@ -1,9 +1,0 @@
-<h1>Artists#search</h1>
-<p>Find me in app/views/artists/search.html.erb</p>
-
-<%= form_tag artists_index_path, method: "get", html: { class: "form" } do %>
-<div >
-<%= text_field_tag(:artist_name, "", placeholder: "Enter artist name") %>
-</div>
-<%= submit_tag "Search" %>
-<% end %>
