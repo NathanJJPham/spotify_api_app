@@ -1,0 +1,10 @@
+<h1>Login Client Id and Secret</h1>
+<%= form_with method: :get do |form| %>
+  <%= form.label :client_secret, "Client Secret" %>
+  <%= form.text_field :client_secret %>
+  <%= form.label :client_id, "Client ID" %>
+  <%= form.text_field :client_id %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<%= link_to 'Request Authorization', @external_url%>
