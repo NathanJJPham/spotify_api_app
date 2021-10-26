@@ -1,0 +1,12 @@
+<h1>Search page</h1>
+<%= form_with method: :get do |form| %>
+  <%= form.label :query, "Album Search" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<div> <%= @code %></div>
+<div> <%= @response.body %></div>
+
+
+
