@@ -1,15 +1,17 @@
+require 'httparty'
+
 class HomeController < ApplicationController
-  require 'httparty'
 
   AUTHORIZE = "https://accounts.spotify.com/authorize?"
-  CLIENT_SECRET = "e5882992e95e4aff9f8817252353c192"
-  CLIENT_ID = "dbecd3a4157c4d8cb70e829987f0ad81"
+  CLIENT_SECRET = ENV['CLIENT_SECRET']
+  CLIENT_ID = ENV['CLIENT_ID']
   REDIRECT_URI = "http://localhost:3000/home/search"
 
   TOKEN = "https://accounts.spotify.com/api/token"
 
   def index
     @external_url = "https://accounts.spotify.com/authorize?client_id=#{CLIENT_ID}&response_type=code&redirect_uri=#{REDIRECT_URI}"
+
   end
   
   def search
@@ -31,5 +33,17 @@ class HomeController < ApplicationController
       "Authorization" => "Bearer #{@access_token}",
       "Content-Type" => "application/json"
     })
+  end
+
+  def auth
+    @query = {
+      'response_type' => "code",
+      'client_id' => CLIENT_ID,
+      'redirect_uri' => REDIRECT_URI
+    }
+
+    @test = HTTParty.get('https://accounts.spotify.com/authorize?', 
+    :query => @query,
+    )
   end
 end
