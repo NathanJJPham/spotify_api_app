@@ -33,17 +33,19 @@ class HomeController < ApplicationController
       "Authorization" => "Bearer #{@access_token}",
       "Content-Type" => "application/json"
     })
+
+    @body = JSON.parse(@response.body)
   end
 
-  def auth
-    @query = {
-      'response_type' => "code",
-      'client_id' => CLIENT_ID,
-      'redirect_uri' => REDIRECT_URI
-    }
+  # def auth
+  #   @query = {
+  #     'response_type' => "code",
+  #     'client_id' => CLIENT_ID,
+  #     'redirect_uri' => REDIRECT_URI
+  #   }
 
-    @test = HTTParty.get('https://accounts.spotify.com/authorize?', 
-    :query => @query,
-    )
-  end
+  #   @test = HTTParty.get('https://accounts.spotify.com/authorize?', 
+  #   :query => @query,
+  #   )
+  # end
 end
