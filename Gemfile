@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'httparty'
 gem 'dotenv-rails'
 gem "tailwindcss-rails", "~> 0.5.1"
+gem 'devise'
+

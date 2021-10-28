@@ -12,8 +12,10 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main>
+      <%= render 'layouts/header'%>
       <%= yield %>
+      <%= render 'layouts/alerts' %>
     </main>
   </body>
 </html>
