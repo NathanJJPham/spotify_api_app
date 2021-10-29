@@ -56,4 +56,6 @@ gem 'httparty'
 gem 'dotenv-rails'
 gem "tailwindcss-rails", "~> 0.5.1"
 gem 'devise'
-
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'activerecord-session_store'
